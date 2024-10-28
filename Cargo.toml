@@ -1,0 +1,10 @@
+[package]
+name = "custom_memory_allocator"
+version = "0.1.0"
+authors = ["Bob Peters <contact@rust-trends.com>"]
+edition = "2021"
+
+[dependencies]
+mimalloc = { version = "0.1.43", features = ["secure"] }
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+tikv-jemallocator = "0.6.0"
